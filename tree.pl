@@ -30,11 +30,7 @@ child(X,Y):-parent(X,Y).
 
 showBirthday(Name):-
 	date_of_birth(Name,D,M,Y),
-	atom_concat(D,'.', Temp),
-	atom_concat(Temp,M, Temp_),
-	atom_concat(Temp_,'.', Temp__),
-	atom_concat(Temp__,Y, Bd),
-	writef('%w\'s birthday is: %w',[Name, Bd]),
+	writef('%w\'s birthday is: %d.%d.%d',[Name, D,M,Y]),
 	nl.	
 
 mother(X,Y):-parent(X,Y),female(X).
